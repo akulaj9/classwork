@@ -18,7 +18,6 @@ def rectangls_square(height, width):
 result1 = rectangls_square(10, 20)
 pretty_print(result1)
 
-
 def square_square(side):
     return rectangls_square(side, side)
 
