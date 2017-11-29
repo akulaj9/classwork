@@ -22,6 +22,7 @@ def is_not_zero(value):
 def is__zero(value):
     return value == 0
 
+
 if is_not_zero(b):
     result = a/b
     print("Result:", result)
