@@ -34,29 +34,48 @@ print("Привет, Богатырь!")
 print("1: Налево пойдешь - коня найдешь")
 print("2: Направо пойдешь - полцарства найдешь")
 print("3: Прямо пойдешь - мешок денег найдешь")
-print("4: Назад пойдешь жену найдешь")
+print("4: Назад пойдешь - жену найдешь")
 
 while True:
-    user_choice = input("Сделай свой выбор [1..3], q = выход: ")
+    user_choice = input("Сделай свой выбор [1..4], q = выход: ")
     # print (user_choice)
 
     if user_choice == 'q':
-        print("Заходи еще!1")
+        print("Заходи еще!")
         break
 
-    if user_choice == "1":
+    valid_input = True
+    if not user_choice.isnumeric():
+        valid_input = False
+
+    elif not (1 <= int(user_choice)<= 4):
+        valid_input = False
+
+    if not valid_input:
+        print('Сделай правильный выбор [1..4], q = выход!!!')
+        continue
+
+
+    user_choice = int (user_choice)
+    if user_choice == 1:
         print("Лошадку жалко :(")
 
-    elif user_choice == "2":
+    elif user_choice == 2:
         print("Молодец!")
 
-    elif user_choice == "3":
-        print("10% за подсказку!")
+    elif user_choice == 3:
+         print("10% за подсказку!")
 
-    elif user_choice == "4":
-        print("Поздравляем!")
+    elif user_choice == 4:
+        print("Совет да любовь!!")
 
-    else:
-        print('Сделай правильный выбор!!!')
+       # else:
+        #    print('Сделай правильный выбор [1..4], q = выход!!!')
+    #else:
+     #   print('Сделай правильный выбор [1..4], q = выход!!!')
+
+
+    #else:
+    #    print('Сделай правильный выбор [1..4], q = выход!!!')
 
 
