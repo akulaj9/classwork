@@ -22,21 +22,31 @@ f.close()
 
 print("******")
 
-def word_counter(file_path, num_limit=20):
+def word_counter(file_path, file_path_stop_words, num_limit=20):
     f = open(file_path)
-    content = f.read()
+    content = f.read().lower()
+    lst_words = content.split()
     f.close()
 
+    f2 = open(file_path_stop_words)
+    content_stop_words = f2.read()
+    f2.close()
+
     lst_words = content.split()
+    lst_stop_words = content_stop_words.split()
+
     print(len(lst_words))
+    print(len(lst_stop_words))
 
     word_stars = {}
     for word in lst_words:
-        word = word.strip(string.punctuation)
-        if word in word_stars:
-            word_stars[word] = word_stars[word]+ 1
-        else:
-            word_stars[word] = 1
+        if word not in lst_stop_words:
+            word = word.strip(string.punctuation)
+            if word:
+                if word in word_stars:
+                    word_stars[word] = word_stars[word]+ 1
+                else:
+                    word_stars[word] = 1
 
     #pprint.pprint(word_stars)
 
@@ -47,5 +57,5 @@ def word_counter(file_path, num_limit=20):
         print("%s:\t%d" %(key, word_stars[key]))
 
 
-word_counter('hhgttg.txt')
+word_counter('hhgttg.txt', 'stop_words.txt')
 
