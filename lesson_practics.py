@@ -109,6 +109,9 @@ def get_ranks_sorted(group):
 get_ranks_sorted(group)
 
 
-def print_top_n(students_rank, n):
-    pass
+def print_top_n(students_rank, n=3):
+    print('--- Top %d students ---' % n)
+    for i in range(n):
+        print(group[i][0], group[i][1])
 
+print_top_n(group, 5)
