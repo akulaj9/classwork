@@ -59,3 +59,18 @@ def word_counter(file_path, file_path_stop_words, num_limit=20):
 
 word_counter('hhgttg.txt', 'stop_words.txt')
 
+print("******")
+
+def get_data_from_csv(filename):
+
+    f = open(filename, "r")
+    list_dicts = [row for row in csv.DictReader(f)]
+    f.close()
+
+    return list_dicts
+
+lst_dicts = get_data_from_csv('cities.csv')
+for i, dict in enumerate(lst_dicts):
+    print("Entry #", i)
+    for k, v in dict.item():
+        print("\")
