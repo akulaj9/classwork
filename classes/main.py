@@ -1,4 +1,6 @@
 from student import Student
+from professor import Professor
+from pprint import pprint as pp
 
 
 def main():
@@ -22,7 +24,20 @@ def main():
     student1.accept_task(3)
     student1.accept_task(5)
     student1.print_info()
+    student2.accept_test(12)
     student2.print_info()
+
+    # print(type(Student))
+    #
+    # pp(student1.__dict__)
+    # student1.__dict__['name'] = 'IVAN'
+    # print(student1.name)
+    #
+    # pp(Student.__dict__)
+
+    prof1 = Professor('Dr. Who', 42)
+    prof1.print_info()
+
 
 
 if __name__ == '__main__':
