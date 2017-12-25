@@ -36,8 +36,10 @@ def main():
     # pp(Student.__dict__)
 
     prof1 = Professor('Dr. Who', 42)
+    prof1.salary = 1000
     prof1.print_info()
-
+    print(prof1)
+    print(prof1.salary)
 
 
 if __name__ == '__main__':
